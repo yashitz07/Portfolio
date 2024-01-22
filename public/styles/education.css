@@ -1,0 +1,54 @@
+#edu-content {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#edu-right {
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
+}
+[data-aos^=zoom][data-aos^=zoom].aos-animate {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+}
+
+
+
+.edu-data {
+    border-left: 5px solid #01d293;
+    padding: 2% 2% 2% 0;
+    width: 100%;
+}
+.edu-upper {
+    align-items: baseline;
+    border-bottom: 2px solid #91c8f8;
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    width: 100%;
+}
+.degree {
+    font-size: 22px;
+}
+.year {
+    padding-right: 5%;
+}
+.edu-lower {
+    align-items: baseline;
+    color: #6d7d88;
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-top: 15px;
+    width: 100%;
+}
+.marks{
+    font-family: sans-serif;
+}
