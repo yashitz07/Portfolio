@@ -29,32 +29,6 @@ app.get("/achievement", (req, res) => {
   res.render("achievement.ejs");
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   var mobileMenuIcon = document.getElementById("mobile-menu-icon");
-//   var headerNavigation = document.querySelector(".header_navigation");
-
-//   mobileMenuIcon.addEventListener("click", function () {
-//     headerNavigation.classList.toggle("show-mobile-menu");
-//   });
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.get("/projects", (req, res) => {
   res.render("projects.ejs");
 });
@@ -80,14 +54,15 @@ app.post('/submit', (req, res) => {
   
       // Use the connected client to execute the query
       db.query(query, values, (error, result) => {
-          if (error) {
-              console.error('Error executing query', error);
-              res.status(500).send('Error inserting data');
-          } else {
-              console.log('Data inserted successfully');
-              res.status(200).send('Data inserted successfully');
-          }
-      });
+        if (error) {
+            console.error('Error executing query', error);
+            res.status(500).json({ message: 'Error inserting data' });
+        } else {
+            console.log('Data inserted successfully');
+            // Send a JSON response with a success message
+            res.status(200).json({ message: 'Thanks You For Message' });
+        }
+    });
   });
   // Start the server
   app.listen(port, () => {

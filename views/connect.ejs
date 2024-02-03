@@ -1,30 +1,25 @@
 <section id="contact" class="contact_contact">
-    <div class="container">
-      <div class="flex justify-between flex-col md:flex-row  row">
-        <div class=" ">
-          <h3 class="connect-me">Connect with me</h3>
-          <ul class="contact_contact__info">
-            <li class="contact_info__item"><span><i class="ri-map-pin-line"></i></span>
-              <p>Planet Earth 🌍</p>
-            </li>
-            <li class="contact_info__item"><span><a href="mailto:yashitz07@gmail.com">
-                  <i
-                    class="ri-mail-line"></i></a></span>
-              <p><a  href="mailto:yashitz07@gmail.com">yashitz07@gmail.com</a></p>
-            </li>
-          </ul>
-        <div class="col-md-6 col-lg-5">
-          
-          <form class="flex flex-col space-y-4" action="http://localhost:3000/submit" method="post"> <input
-              class="text-md border-transparent rounded-lg block w-full p-2.5 bg-[#171f38] placeholder-gray-400 text-white"
-              type="text" name="name" placeholder="Your Full Name" required="" autocomplete="off"><input
-              class="text-md border-transparent rounded-lg block w-full p-2.5 bg-[#171f38] placeholder-gray-400 text-white"
-              type="email" name="email" placeholder="Your Email" required="" autocomplete="off"><textarea
-              class="text-md border-transparent rounded-lg block w-full p-2.5 bg-[#171f38] placeholder-gray-400 text-white"
-              name="message" placeholder="Your Message" required="" rows="4" autocomplete="off"></textarea><button
-              type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Send Message</button>
-          </form>
-        </div>
+  <div class="container">
+    <div class="contact_content">
+      <div class="contact_info">
+        <h3 class="connect-me">Connect with me</h3>
+        <ul class="contact_info__list">
+          <li class="contact_info__item"><span><i class="ri-map-pin-line"></i></span>
+            <p>Planet Earth 🌍</p>
+          </li>
+          <li class="contact_info__item"><span><a href="mailto:yashitz07@gmail.com"><i class="ri-mail-line"></i></a></span>
+            <p><a href="mailto:yashitz07@gmail.com">yashitz07@gmail.com</a></p>
+          </li>
+        </ul>
+      </div>
+      <div class="contact_form">
+        <form id="myForm" class="form1" action="http://localhost:3000/submit" method="post">
+          <input type="text" name="name" placeholder="Your Full Name" required="" autocomplete="off">
+          <input type="email" name="email" placeholder="Your Email" required="" autocomplete="off">
+          <textarea name="message" placeholder="Your Message" required="" rows="4" autocomplete="off"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
