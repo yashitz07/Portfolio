@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import pg from "pg";
 import path from 'path';
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -65,6 +65,6 @@ app.post('/submit', (req, res) => {
     });
   });
   // Start the server
-  app.listen(port, () => {
+  app.listen(process.env.PORT || 3000, () => {
       console.log(`Server is running on http://localhost:${port}`);
   });
