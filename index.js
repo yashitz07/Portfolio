@@ -21,7 +21,7 @@ app.use('/public', express.static('public'));
 app.get("/", (req, res) => {
   res.render(path.join(__dirname,'views', 'index.ejs'));
 });
-app.get("/projects", (req, res) => {
+app.get("/connect", (req, res) => {
   res.render(path.join(__dirname,'views', 'connect.ejs'));
 });
 
