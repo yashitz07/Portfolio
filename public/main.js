@@ -5,10 +5,10 @@ document.querySelector('form').addEventListener('submit', async (event) => {
     const formData = new FormData(event.target);
 
     // Make a POST request to the server
-    // const response = await fetch('http://localhost:3000/submit', {
-    //     method: 'POST',
-    //     body: formData,
-    // });
+    const response = await fetch('http://localhost:3000/submit', {
+        method: 'POST',
+        body: formData,
+    });
 
     // Parse the JSON response
     const result = await response.json();
