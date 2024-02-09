@@ -36,6 +36,14 @@ app.get("/projects", (req, res) => {
 app.get("/education", (req, res) => {
   res.render(path.join(__dirname,'views', 'education.ejs'));
 });
+
+app.get("/header", (req, res) => {
+  res.render(path.join(__dirname,'views','partials', 'header.ejs'));
+});
+
+app.get("/footer", (req, res) => {
+  res.render(path.join(__dirname,'views', 'footer.ejs'));
+});
 // const db = new pg.Client({
 //   user: "postgres",
 //   host: "localhost",
