@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   res.render(path.join(__dirname,'views', 'index.ejs'));
 });
 app.get("/projects", (req, res) => {
-  res.render(path.join(__dirname,'views', 'projects.ejs'));
+  res.render(path.join(__dirname,'views', 'connect.ejs'));
 });
 
 app.get("/achievement", (req, res) => {
