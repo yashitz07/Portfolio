@@ -22,15 +22,15 @@ app.get("/", (req, res) => {
   res.render(path.join(__dirname,'views', 'index.ejs'));
 });
 app.get("/projects", (req, res) => {
-  res.render("projects.ejs");
+  res.render(path.join(__dirname,'views', 'projects.ejs'));
 });
 
 app.get("/achievement", (req, res) => {
-  res.render("achievement.ejs");
+  res.render(path.join(__dirname,'views', 'achievement.ejs'));
 });
 
 app.get("/projects", (req, res) => {
-  res.render("projects.ejs");
+  res.render(path.join(__dirname,'views', 'projects.ejs'));
 });
 // const db = new pg.Client({
 //   user: "postgres",
