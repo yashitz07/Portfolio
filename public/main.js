@@ -17,3 +17,11 @@ document.querySelector('form').addEventListener('submit', async (event) => {
     alert(result.message);
     document.getElementById('myForm').reset();
 });
+document.addEventListener("DOMContentLoaded", function () {
+    var mediaButton = document.querySelector(".main_media_button");
+    var mainList = document.querySelector(".main_list");
+
+    mediaButton.addEventListener("click", function () {
+        mainList.classList.toggle("show_list");
+    });
+});
