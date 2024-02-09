@@ -42,7 +42,7 @@ app.get("/header", (req, res) => {
 });
 
 app.get("/footer", (req, res) => {
-  res.render(path.join(__dirname,'views', 'footer.ejs'));
+  res.render(path.join(__dirname,'views','partials', 'footer.ejs'));
 });
 // const db = new pg.Client({
 //   user: "postgres",
