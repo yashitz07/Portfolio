@@ -19,7 +19,7 @@ app.use(express.static("public"));
 app.use('/public', express.static('public'));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render(path.join(__dirname,'views', 'index.ejs'));
 });
 app.get("/projects", (req, res) => {
   res.render("projects.ejs");
