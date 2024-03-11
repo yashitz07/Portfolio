@@ -66,10 +66,10 @@ section {
 }
 @media (max-width: 991.98px) {
   .subtitle_section::before {
-      left: 9rem; /* Adjust the left position for smaller screens */
+      left: 7rem; /* Adjust the left position for smaller screens */
   }
   .subtitle_section::after {
-      left: 16rem; /* Adjust the left position for smaller screens */
+      left: 13rem; /* Adjust the left position for smaller screens */
   }
 }
 

@@ -12,10 +12,10 @@
   }
   @media (max-width: 991.98px) {
     .slides::before {
-        left: 9rem; /* Adjust the left position for smaller screens */
+        left: 6rem; /* Adjust the left position for smaller screens */
     }
     .slides::after {
-        left: 18rem; /* Adjust the left position for smaller screens */
+        left: 15rem; /* Adjust the left position for smaller screens */
     }
   }
 #edu-content {
