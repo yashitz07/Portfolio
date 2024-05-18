@@ -1,48 +1,50 @@
 .slides::after {
-
     content: attr(data-content); /* Use the content attribute to display text */
-    position: absolute;
+    position:absolute;
     font-size: 1.5rem!important;
     font-weight: 400;
     margin-left: 20px; /* Adjust margin for smaller screens */
     top: 50%;
     left: 100px; /* Adjust this value based on your design */
-    transform: translate(-100%, -50%); /*Move text to the end of the line*/
+    transform: translate(-100%, -50%); /* Move text to the end of the line */
     color: #01d293;
-  }
-  @media (max-width: 991.98px) {
-    .slides::before {
-        left: 6rem; /* Adjust the left position for smaller screens */
-    }
+}
+
+@media (max-width: 991.98px) {
     .slides::after {
-        left: 15rem; /* Adjust the left position for smaller screens */
+        left: 17rem; /* Adjust the left position for smaller screens */
     }
-  }
+}
+
 #edu-content {
     color: #fff;
     display: flex;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap; /* Added to wrap the content on smaller screens */
 }
+
 #edu-right {
     align-items: baseline;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 80%;
+    max-width: 800px; /* Added to limit the width */
 }
+
 [data-aos^=zoom][data-aos^=zoom].aos-animate {
     opacity: 1;
     transform: translateZ(0) scale(1);
 }
 
-
-
 .edu-data {
     border-left: 5px solid #01d293;
-    padding: 2% 2% 2% 0;
+    padding: 2% 0 2% 2%; /* Adjusted padding for better spacing */
     width: 100%;
+    margin-bottom: 20px; /* Added margin for spacing between entries */
 }
+
 .edu-upper {
     align-items: baseline;
     border-bottom: 2px solid #91c8f8;
@@ -53,12 +55,15 @@
     padding-left: 20px;
     width: 100%;
 }
+
 .degree {
     font-size: 22px;
 }
+
 .year {
     padding-right: 5%;
 }
+
 .edu-lower {
     align-items: baseline;
     color: #6d7d88;
@@ -69,6 +74,31 @@
     padding-top: 15px;
     width: 100%;
 }
-.marks{
+
+.marks {
     font-family: sans-serif;
+}
+
+@media (max-width: 768px) {
+    .edu-upper, .edu-lower {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .year, .marks {
+        padding-right: 0;
+        padding-top: 10px;
+    }
+}
+
+/* New CSS rules to replace Tailwind classes */
+.education-title {
+    margin-bottom: 3rem; /* Equivalent to mb-5 */
+    width: 100%;
+    max-width: 100%;
+}
+
+.education-subtitle {
+    margin-top: 1.5rem; /* Equivalent to mt-4 */
+    font-size: 1.5rem; /* Equivalent to text-2xl */
 }
