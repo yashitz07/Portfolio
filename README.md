@@ -56,8 +56,6 @@ For any inquiries or feedback, you can reach me at:
 
 Email: yashitz07@gmail.com
 LinkedIn: https://www.linkedin.com/in/yash-patel-882307252/
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 🌟 Thank you for visiting my portfolio website! I hope you enjoy exploring my work and learning more about my skills and projects. If you have any questions or comments, please feel free to reach out.
 
