@@ -1,27 +1,22 @@
-document.querySelector('form').addEventListener('submit', async (event) => {
-    event.preventDefault();
+const form = document.getElementById('myForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-    // Fetch the form data
-    const formData = new FormData(event.target);
+  const formData = new FormData(form);
+  const data = new URLSearchParams();
+  formData.forEach((value, key) => {
+    data.append(key, value);
+  });
 
-    // Make a POST request to the server
-    const response = await fetch('http://localhost:3000/submit', {
-        method: 'POST',
-        body: formData,
-    });
-
-    // Parse the JSON response
-    const result = await response.json();
-
-    // Display an alert with the server response
-    alert(result.message);
-    document.getElementById('myForm').reset();
-});
-document.addEventListener("DOMContentLoaded", function () {
-    var mediaButton = document.querySelector(".main_media_button");
-    var mainList = document.querySelector(".main_list");
-
-    mediaButton.addEventListener("click", function () {
-        mainList.classList.toggle("show_list");
+  fetch('', {
+    method: 'POST',
+    body: data, // Send the data as application/x-www-form-urlencoded
+  })
+    .then(response => response.text())
+    .then(result => {
+      console.log(result);
+    })
+    .catch(error => {
+      console.error('Error:', error);
     });
 });

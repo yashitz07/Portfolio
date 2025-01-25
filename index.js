@@ -2,8 +2,9 @@ import express from "express";
 import bodyParser from "body-parser";
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import pg from "pg";
 import path from 'path';
+import dotenv from 'dotenv';
+dotenv.config(); 
 const app = express();
 const port = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
@@ -44,38 +45,23 @@ app.get("/header", (req, res) => {
 app.get("/footer", (req, res) => {
   res.render(path.join(__dirname,'views','partials', 'footer.ejs'));
 });
-// const db = new pg.Client({
-//   user: "postgres",
-//   host: "localhost",
-//   database: "user_data",
-//   password: "database@2604",
-//   port: 5432,
-// });
-// db.connect()
-//     .then(() => {
-//         console.log('Connected to the database');
-//     })
-//     .catch((error) => {
-//         console.error('Error connecting to the database', error);
-//     });
+
 app.post('/submit', (req, res) => {
-    const { name, email, message } = req.body;
-  
-    const query = 'INSERT INTO data (name, email, message) VALUES ($1, $2, $3)';
-    const values = [name, email, message];
-  
-      // Use the connected client to execute the query
-      db.query(query, values, (error, result) => {
-        if (error) {
-            console.error('Error executing query', error);
-            res.status(500).json({ message: 'Error inserting data' });
-        } else {
-            console.log('Data inserted successfully');
-            // Send a JSON response with a success message
-            res.status(200).json({ message: 'Thanks You For Message' });
-        }
-    });
+  // Handle the form submission here
+  const { name, email, message } = req.body;
+
+  // Process the form data, e.g., save to the database or send an email
+
+  // Respond with a success message (JSON or HTML depending on your needs)
+  res.json({ message: 'Form submitted successfully' });
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact', {
+    WebappURL: process.env.WebappURL
   });
+});
+
   // Start the server
   app.listen(process.env.PORT || 3000, () => {
       console.log(`Server is running on http://localhost:${port}`);
