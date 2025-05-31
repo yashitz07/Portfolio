@@ -1,22 +1,22 @@
+// Replace these with your actual values
+const SERVICE_ID = 'service_3c25gwc';
+const TEMPLATE_ID = 'template_atlktth';
+const PUBLIC_KEY = 'GPLnuKl1gYmhc4bU1'; 
+
+// Initialize EmailJS
+emailjs.init(PUBLIC_KEY);
+
 const form = document.getElementById('myForm');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const formData = new FormData(form);
-  const data = new URLSearchParams();
-  formData.forEach((value, key) => {
-    data.append(key, value);
-  });
-
-  fetch('', {
-    method: 'POST',
-    body: data, // Send the data as application/x-www-form-urlencoded
-  })
-    .then(response => response.text())
-    .then(result => {
-      console.log(result);
+  emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
+    .then(() => {
+      alert("Message sent successfully! 📩");
+      form.reset();
     })
-    .catch(error => {
-      console.error('Error:', error);
+    .catch((error) => {
+      console.error('EmailJS Error:', error);
+      alert("Failed to send message. Please try again.");
     });
 });

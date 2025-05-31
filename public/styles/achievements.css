@@ -1,0 +1,101 @@
+/* Existing Styles (with potential minor adjustments) */
+#achievement { /* Changed from .achv-section to match your HTML id */
+  color: #c0c0c0;
+  padding: 0px 0px;
+}
+
+.achievement-title { /* Style for the title section if needed */
+  text-align: center; /* Example: Centering the title */
+  margin-bottom: 30px;
+}
+
+.subtitle_section.slides {
+  /* Your existing styles for subtitle_section */
+  color: #01d293; /* Example color */
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  left: 70px;
+}
+
+
+.achievement-subtitle {
+  /* Your existing styles for achievement-subtitle */
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Styles for the cards container */
+#achv-right {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line if they don't fit */
+  gap: 20px;       /* Space between cards */
+  justify-content: center; /* Center cards if they don't fill the whole row */
+}
+
+.achv-card {
+  background-color: #0e1630;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Desktop: 3 cards per row */
+  flex: 0 0 calc(33.333% - 20px); /* (100% / 3) - gap. Adjust 20px if your gap is different or if you have padding issues */
+  max-width: calc(33.333% - 20px); /* Ensure it doesn't grow beyond this */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.achv-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(1, 210, 147, 0.3);
+}
+
+.achv-title {
+  color: #01d293;
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  display: flex; /* To align title and date properly */
+  justify-content: space-between; /* Puts space between title and date */
+  align-items: flex-start; /* Aligns items at the top */
+}
+
+.achv-date {
+  font-size: 0.9em;
+  color: #7e7e7e;
+  margin-left: 6px; /* Keeps some space if the title is short */
+  white-space: nowrap; /* Prevents the date from wrapping */
+}
+
+.achv-list {
+  list-style-type: disc;
+  margin-left: 18px;
+  padding-left: 0; /* Resetting default padding for ul */
+}
+
+.achv-list li {
+  margin-bottom: 6px;
+}
+
+/* Mobile View: 1 card per row */
+@media (max-width: 992px) { /* Adjust breakpoint for tablets if needed */
+  .achv-card {
+    flex: 0 0 calc(50% - 20px); /* 2 cards per row for tablets */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) { /* Breakpoint for smaller tablets and mobile phones */
+  .achv-card {
+    flex: 1 1 100%; /* Card takes full width */
+    max-width: 100%; /* Ensure it doesn't exceed container on very small screens, or use a fixed max-width like 400px if preferred */
+  }
+
+  .achv-title {
+    flex-direction: column; /* Stack title and date vertically on mobile */
+    align-items: flex-start;
+  }
+
+  .achv-date {
+    margin-left: 0; /* Remove left margin when stacked */
+    margin-top: 5px;  /* Add some space above the date */
+  }
+}

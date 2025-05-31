@@ -1,134 +1,157 @@
-* {
-    box-sizing: border-box;
+/* General Styles for Project Section */
+.projects-section {
+  color: #ffffff; /* Default text color for the section */
+  padding: 50px 0; /* Adjusted padding */
+  font-family: 'Arial', sans-serif; /* Or your preferred font */
 }
 
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1320px;
-    }
-}
-
-.mb-5 {
-    margin-bottom: 3rem!important;
-}
-
-@media (min-width: 992px) {
-    .col-lg-6 {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-}
-
-.subtitle_section {
-    color: var(--site-theme-color)!important;
-    
-}
-
-a:not([href]):not([class]), a:not([href]):not([class]):hover {
-    color: inherit;
-    text-decoration: none;
-}
-
-.mt-4 {
-    margin-top: 1.5rem!important;
-    padding-right: 2rem; /* Adjust padding for smaller screens */
-}
-
-/* Media query for screens smaller than 992px */
-@media (max-width: 991.98px) {
-    .col-lg-6 {
-        width: 100%;
-    }
-}
-
-.duration-300:hover {
-    transition-duration: .3s;
-    box-shadow: .3s;
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Bootstrap container adjustments (if needed, Bootstrap usually handles this) */
+/* @media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
   }
-  .projects-subtitle {
-    margin-top: 1.5rem; /* Equivalent to mt-4 */
-    font-size: 1.5rem; /* Equivalent to text-2xl */
-}
-.shadow-md {
-    --tw-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
-    --tw-shadow-colored: 0 4px 6px -1px var(),0 2px 4px -2px var();
-    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
-}
-.portfolio-item_portfolio__item___GoM5 {
-    background: #171f38;
-    padding: 20px 15px 10px;
-    border-radius: 10px;
-    margin-bottom: 8px;
-    min-height: 100%;
-    position: relative;
-}
-.portfolio-item_portfolio__item___GoM5 div {
-    background: transparent;
-}
-.bg-transparent {
-    --bs-bg-opacity: 1;
-    background-color: transparent!important;
-}
-.portfolio-item_portfolio__img__whmCV {
+} */
+.projects-section h2 {
     text-align: center;
-}
-.portfolio-item_portfolio__img__whmCV img {
-    border-radius: 10px;
-}
-.portfolio-item_portfolio__img__whmCV img {
-    border-radius: 10px;
-}
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    vertical-align: middle;
+    color: #01d293; /* Your accent color */
+    margin-bottom: 40px;
+    font-size: 2.5em;
+  }
 
+.projects-main-title {
+  color: #01d293; /* Your accent color */
+  font-size: 2.5em; /* Similar to experience section title */
+  margin-bottom: 15px;
 }
 
-.portfolio-item_portfolio__item___GoM5 h3 {
-    
-    padding: 10px 0 0;
-}
-h1, h2, h3, h4, h5, h6 {
-    color: #fff;
-}
-blockquote h3 {
-    margin: 0;
-    font-size: inherit;
-    font-weight: inherit;
+.projects-subtitle {
+  font-size: 1.2em; /* Adjust as needed */
+  color: #b0c4de; /* Lighter text color for subtitle */
+  margin-top: 0;
 }
 
-/* @media (min-width: 1200px){
-.h3, h3{
-    font-size: 1.75rem;
-}} */
-p {
-    color: #808dad;
-    line-height: 30px;
+/* Styling for each project column to add some space between cards */
+.project-column {
+  margin-bottom: 30px; /* Spacing between rows of cards */
+  display: flex; /* Added for consistent card height if needed */
 }
-@media (min-width: 1024px){
 
+/* Individual Project Card Styling */
+.project-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%; /* Ensure card takes full width of its column */
+  display: flex; /* To make the link fill the card */
+  flex-direction: column; /* Content flows downwards */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  position: relative; /* For absolute positioning of keywords if needed, or other elements */
+  min-height: 100%; /* Ensures cards in a row have same height, especially if content varies */
 }
-.w-\[100\%\] {
-    width: 100%;
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02); /* Combined effect: lift and slightly scale */
+  box-shadow: 0 8px 16px rgba(1, 210, 147, 0.3);
 }
-.portfolio-item_portfolio__keyword__JJEwv {
-    padding: 5px 10px;
-    color: #fff!important;
-    background: #808dad68;
-    font-size: .7rem;
-    margin-right: 10px;
-    border-radius: 5px;
-    /* margin-bottom: 5px; */
+
+.project-link {
+  text-decoration: none;
+  color: inherit; /* Inherit text color from parent */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Make link area fill the card */
 }
-.portfolio-item_portfolio__keyword__JJEwv:hover{
-    color: #01d293!important;
-    background-color: #fff;
+
+.project-image-container {
+  text-align: center;
+  margin-bottom: 15px;
 }
-.my-1 {
-    margin-top: 0.25rem!important;
-    margin-bottom: 0.25rem!important;
+
+.project-image {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 200px; /* Control max image height, adjust as needed */
+  object-fit: cover; /* Or 'contain' depending on desired image scaling */
+  border-radius: 8px; /* Rounded corners for images */
+  display: block; /* Remove extra space below image */
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.project-content {
+  flex-grow: 1; /* Allows content to fill space, pushing keywords down */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  color: #01d293; /* Accent color for project titles */
+  font-size: 1.6em; /* Adjust as needed */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  color: #c0d0f0; /* Lighter text for description for readability */
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 20px; /* Space before keywords */
+  flex-grow: 1; /* Allows description to take available space */
+}
+
+.project-keywords-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Space between keyword tags */
+  margin-top: auto; /* Pushes keywords to the bottom if card content is sparse */
+  padding-top: 10px; /* Space above keywords if there's a lot of description */
+}
+
+.project-keyword {
+  background-color: #01d2933a; /* Accent color with transparency */
+  color: #01d293; /* Accent color text */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.project-keyword:hover {
+  background-color: #01d293;
+  color: #002057; /* Dark text on accent hover */
+}
+
+/* --- Keep necessary Bootstrap utility overrides or general tags if they are not covered above --- */
+/* For example, if you still need a global p style or h1-h6 from your old CSS */
+p { /* This is a general p tag style, it will affect all p tags unless overridden */
+  /* color: #808dad; From old CSS, might be too light for the new dark theme for general text */
+  /* line-height: 30px; */
+}
+
+h1, h2, h3, h4, h5, h6 { /* General heading color from old CSS, ensure it fits */
+   /* color: #fff; This is already default for the section */
+}
+
+/* Responsive Adjustments (Bootstrap columns handle most of this) */
+/* You can add more specific responsive tweaks if needed */
+@media (max-width: 768px) {
+  .projects-main-title {
+    font-size: 2em;
+  }
+  .project-title {
+    font-size: 1.4em;
+  }
+  .project-card {
+    padding: 15px;
+  }
+}
+
+/* Cleanup example: Remove old verbose classes if they are no longer used */
+/*
+.portfolio-item_portfolio__item___GoM5 { }
+.portfolio-item_portfolio__img__whmCV { }
+.portfolio-item_portfolio__keyword__JJEwv { }
+.subtitle_section { }
+.bg-transparent { }
+.w-\[100\%\] { }
+*/

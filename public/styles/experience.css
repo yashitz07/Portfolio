@@ -1,0 +1,98 @@
+.experience-section {
+    color: #ffffff; /* White text for better contrast on dark background */
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif; /* You can change the font */
+  }
+
+  .experience-section h2 {
+    text-align: center;
+    color: #01d293; /* Your accent color */
+    margin-bottom: 40px;
+    font-size: 2.5em;
+  }
+
+  .experience-entry {
+    border-left: 5px solid #01d293; /* Accent color border */
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* --- Added for hover effect --- */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+
+  /* --- Hover effect for experience entry --- */
+  .experience-entry:hover {
+    transform: translateY(-5px); /* Slightly raise the card */
+    box-shadow: 0 8px 16px rgba(1, 210, 147, 0.3); /* Enhance shadow for depth */
+  }
+
+  .experience-entry h3 {
+    color: #01d293; /* Accent color */
+    margin-top: 0;
+    font-size: 1.8em;
+  }
+
+  .experience-entry .role-dates {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .experience-entry .role {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #f0f0f0;
+  }
+
+  .experience-entry .dates {
+    font-size: 1em;
+    color: #b0c4de; /* Lighter blue for dates */
+    font-style: italic;
+  }
+
+  .experience-entry ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .experience-entry ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .experience-entry ul li::before {
+    content: '•';
+    color: #01d293; /* Accent color for bullet points */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.2em;
+    position: absolute;
+    left: 10px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .experience-section h2 {
+      font-size: 2em;
+    }
+    .experience-entry h3 {
+      font-size: 1.5em;
+    }
+    .experience-entry .role-dates {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .experience-entry .dates {
+      margin-top: 5px;
+    }
+    /* Optional: reduce hover effect on mobile if it feels too much */
+    .experience-entry:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+  }

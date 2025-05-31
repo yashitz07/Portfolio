@@ -128,8 +128,27 @@
     transform: rotate3d(0, 0, 1, -20deg);
 }
 
-/* Home section */
-
+@media screen and (max-width:768px) {
+    /* ... other styles ... */
+    
+    .nav div.main_list{
+        width: 100%;
+        margin-top: 65px; /* This is the height of your nav bar */
+        height: 0px;
+        overflow: hidden;
+        background-color: #0e1630; /* Ensure it has a background */
+        position: absolute; /* Added for better layering */
+        left: 0; /* Align to the left */
+        z-index: 999; /* Ensure it's above other content but below the fixed nav */
+        transition: height 0.35s ease-in-out; /* ADD THIS LINE */
+    }
+    
+    .nav div.show_list{ /* This class is ADDED to main_list when active */
+        height: 200px; /* Adjust height as needed based on number of items */
+    }
+    
+    /* ... rest of your mobile styles ... */
+}
 
 
 /* Medai qurey section */

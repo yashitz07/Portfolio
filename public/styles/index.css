@@ -1,0 +1,273 @@
+/* Hero Section Styling (was .home in your provided CSS) */
+.home { /* This is your main hero section wrapper */
+  position: relative;
+  /* display: flex; -- This will be applied to .hero-flex-container instead */
+  /* flex-wrap: wrap; */
+  /* gap: 1.5rem; */
+  min-height: 100vh;
+  align-items: center; /* Vertically center content in viewport height */
+  background-color: #002057; /* YOUR PORTFOLIO BACKGROUND COLOR */
+  color: #ffffff; /* Default text color for hero section */
+  padding: 60px 0; /* Add some padding */
+  overflow: hidden; /* Prevent particles from causing scrollbars if they overflow slightly */
+}
+
+/* This new container will handle the direct flex layout for content and image */
+.hero-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Or 2rem, adjust as needed */
+  align-items: center; /* Align items vertically */
+  width: 100%;
+}
+
+
+.home #particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0; /* Behind content */
+}
+
+/* .home::before { ... } -- If you had a specific overlay, keep it, otherwise, it might not be needed if using particles */
+
+.home .content {
+  flex: 1 1 55%; /* Adjust flex basis, give more space to content */
+  padding-top: 1rem; /* Was 1rem */
+  z-index: 1; /* Above particles */
+  max-width: 100%; /* Ensure it doesn't overflow on very small flex items */
+}
+
+.home .image {
+  flex: 1 1 40%; /* Adjust flex basis */
+  z-index: 1; /* Above particles */
+  text-align: center; /* Center image within its flex item */
+  max-width: 100%;
+}
+
+.hero-profile-image { /* Replaces .home .image img specific styles */
+  width: 70%; /* Or adjust, e.g., 250px, 300px */
+  max-width: 350px; /* Max size of the image */
+  height: auto; /* Maintain aspect ratio */
+  /* margin-left: 6rem; -- Removed, text-align:center on parent handles centering */
+  border-radius: 50%; /* Circular image */
+  border: 5px solid #01d293; /* ACCENT COLOR BORDER */
+  box-shadow: 0 5px 20px rgba(1, 210, 147, 0.3); /* Accent color shadow */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hero-profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(1, 210, 147, 0.5);
+}
+
+/* Text Styling in Hero Content */
+.hero-greeting {
+  font-size: 1.8rem; /* Adjust as needed */
+  color: #01d293; /* ACCENT COLOR */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.home .content h2 { /* Main name */
+  font-size: 3.5rem; /* Was 5rem, adjust for responsiveness */
+  font-weight: 700; /* Was 800 */
+  color: #ffffff; /* White text on dark blue background */
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.home .content h2 span { /* If you use a span within the h2 for a different color */
+  font-size: inherit; /* Inherit size from h2 */
+  font-weight: inherit; /* Inherit weight */
+  color: #ff7b00; /* Orange color from your CSS - keep if desired */
+}
+
+.hero-tagline { /* Replaces .home .content p for the tagline */
+  font-size: 1.5rem; /* Was 2.5rem */
+  color: #e0e0e0; /* Slightly off-white */
+  font-weight: 500; /* Was 600 */
+  padding: 0.5rem 0 1rem 0; /* Adjusted padding */
+  line-height: 1.4;
+}
+
+/* This specific styling for span inside p might not be needed anymore or can be adapted */
+/* .home .content p span { ... } */
+
+.hero-about { /* Styling for the about me paragraph */
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #c0d0f0; /* Light blue-gray for readability */
+  margin-bottom: 1.5rem; /* Space before button */
+}
+
+
+/* Button Styling (matches .home .btn from your CSS) */
+.home .btn {
+  display: inline-block; /* Ensure it behaves like a button */
+  margin-top: 1rem;
+  /* position: absolute; -- Usually not needed for a button in normal flow */
+  line-height: normal; /* Allow text to determine height */
+  padding: 0.8rem 2rem; /* Adjusted padding */
+  border-radius: 50px; /* Was 4em */
+  transition: 0.3s ease-in-out;
+  color: #002057; /* Dark text for contrast on accent button */
+  background: #01d293; /* ACCENT COLOR BACKGROUND */
+  box-shadow: 0px 4px 15px rgba(1, 210, 147, 0.4);
+  font-family: "Poppins", sans-serif; /* Consistent font */
+  text-decoration: none; /* For <a> tags */
+  border: 2px solid #01d293; /* Border for definition */
+}
+
+.home .btn span {
+  font-weight: 600; /* Was 700 */
+  font-size: 1rem; /* Was 1.7rem */
+  letter-spacing: 0.5px; /* Was 0.1rem */
+}
+
+.home .btn i {
+  margin-left: 0.5rem; /* Was 0.3rem */
+  font-size: 0.9rem; /* Was 1.5rem */
+  transition: 0.3s;
+}
+
+.home .btn:hover {
+  background: #003c2a; /* Darker shade of accent or contrasting color */
+  color: #ffffff;
+  border-color: #003c2a;
+  box-shadow: 0px 6px 20px rgba(1, 210, 147, 0.6);
+}
+
+.home .btn:hover i {
+  transform: translateX(3px); /* Was 5px */
+}
+
+/* Social Icons Styles (from your provided CSS, kept for if you add them) */
+.socials {
+  position: relative; /* Keep if using absolute positioning within it */
+  margin-top: 2rem; /* Was 9rem, adjust as needed */
+}
+
+.socials .social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.socials .social-icons li {
+  display: inline-block;
+  margin-bottom: 10px; /* Was 14px */
+}
+
+.social-icons a {
+  font-size: 1.5rem; /* Was 2rem */
+  display: inline-block;
+  line-height: 40px; /* Was 44px */
+  color: #01d293; /* ACCENT COLOR */
+  background-color: transparent; /* Transparent background */
+  width: 40px; /* Was 44px */
+  height: 40px; /* Was 44px */
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  border: 1px solid #01d29330; /* Light border */
+  transition: all 0.2s linear;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+  background-color: #01d293; /* Accent color fill on hover */
+  border-color: #01d293;
+}
+/* Specific hover colors for social icons (can be kept or simplified) */
+.social-icons a.github:hover { background-color: #333; border-color: #333;}
+.social-icons a.linkedin:hover { background-color: #007bb6; border-color: #007bb6;}
+.social-icons a.twitter:hover { background-color: #00aced; border-color: #00aced;}
+/* ... etc. ... */
+
+
+/* Hero Media Queries */
+@media (max-width: 991px) { /* For tablets */
+  .home .content h2 {
+    font-size: 3rem;
+  }
+  .hero-tagline {
+    font-size: 1.3rem;
+  }
+  .hero-profile-image {
+    width: 60%;
+    max-width: 300px;
+    margin-top: 2rem; /* Add some space if image wraps below */
+  }
+  .hero-flex-container {
+    text-align: center; /* Center text content if it stacks */
+  }
+  .home .content {
+    flex-basis: 100%; /* Stack content above image */
+    order: 2;
+    text-align: center;
+  }
+  .home .image {
+    flex-basis: 100%; /* Image takes full width when stacked */
+    order: 1; /* Image appears first */
+    margin-bottom: 2rem;
+  }
+  .home .btn {
+    margin: 1.5rem auto; /* Center button */
+  }
+  .socials {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 767px) { /* Further adjustments for smaller mobiles */
+    .home .content h2 {
+        font-size: 2.5rem; /* Smaller name */
+    }
+    .hero-greeting {
+        font-size: 1.5rem;
+    }
+    .hero-tagline {
+        font-size: 1.1rem; /* Smaller tagline */
+    }
+    .hero-about {
+        font-size: 0.95rem;
+    }
+    .hero-profile-image {
+        width: 50%;
+        max-width: 220px;
+        border-width: 4px;
+    }
+}
+
+@media (max-width: 450px) {
+  .home .btn {
+    padding: 0.7rem 1.5rem;
+    /* margin: 2rem auto; -- Already centered from tablet query if stacked */
+  }
+  .home .btn span {
+    font-size: 0.9rem;
+  }
+  .socials {
+    margin-top: 1rem; /* Was 12rem */
+  }
+  .home .content h2 {
+    font-size: 2rem;
+  }
+  .hero-tagline {
+    font-size: 1rem;
+  }
+  .hero-greeting {
+      font-size: 1.2rem;
+  }
+  .hero-profile-image {
+      max-width: 180px;
+  }
+}
