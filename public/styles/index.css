@@ -305,7 +305,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0.5rem; /* Add some top padding when stacked on mobile */
+  padding-top: 3rem; /* Was 1rem. Increase this value as needed e.g., 2rem, 2.5rem, 3rem */
+  padding-bottom: 1rem; /* You might also want to adjust bottom padding if needed */
+  /* These ensure it takes full width on mobile if not handled by a combined rule */
+  width: 100%;
+  flex-basis: 100%;
 }
 
 
