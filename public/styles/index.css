@@ -271,3 +271,91 @@
       max-width: 180px;
   }
 }
+.custom-column,
+.image-column {
+  width: 100%; /* Each column takes full width on small screens */
+  flex-basis: 100%; /* For flexbox, ensure it takes full width before wrapping */
+  /* Add some padding if they stack directly without Bootstrap's gutter */
+  padding-left: 15px; /* Mimic Bootstrap's default gutter */
+  padding-right: 15px; /* Mimic Bootstrap's default gutter */
+  margin-bottom: 1rem; /* Space between stacked items */
+}
+
+/* Styles for the image itself */
+.hero-main-image {
+  display: block; /* Removes extra space below the image */
+  max-width: 100%; /* ESSENTIAL: Image scales down to fit its container */
+  height: auto;    /* ESSENTIAL: Maintains aspect ratio */
+  /* object-fit: cover; -- you have this inline, can be moved here */
+  /* border-radius: 50%; -- you have this inline, can be moved here */
+  margin-left: auto;  /* Centers the image if its max-width is less than column width */
+  margin-right: auto; /* Centers the image */
+
+  /* Optional: Set a maximum pixel width for the image on larger screens */
+  /* For example, if you don't want it to become excessively large */
+  max-width: 500px; /* Adjust as needed */
+
+  /* Example decorative styles (you can use styles from your .hero-profile-image) */
+  border: 3px solid #01d293;
+  box-shadow: 0 4px 15px rgba(1, 210, 147, 0.25);
+}
+
+/* Centering content within image-column (optional, but good for the image) */
+.image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem; /* Add some top padding when stacked on mobile */
+}
+
+
+/* Media Queries for side-by-side layout on larger screens */
+/* This should align with Bootstrap's 'md' breakpoint (usually 768px) */
+/* This will make .custom-column (which has col-md-6) and .image-column both behave like 50% width columns */
+@media (min-width: 768px) {
+  .custom-column,
+  .image-column {
+    /* flex: 0 0 50%; -- Alternative to width, if .row is reliably flex */
+    width: 50%;
+    flex-basis: 50%;
+    margin-bottom: 0; /* Remove bottom margin when side-by-side */
+  }
+  .image-column {
+    padding-top: 0; /* Reset mobile padding */
+  }
+}
+
+/* If your .col-lg-6 provides different styling than .col-md-6 (e.g., different width), */
+/* you might need a similar rule for the 'lg' breakpoint (usually 992px) */
+/* @media (min-width: 992px) { */
+/* .custom-column, */
+/* .image-column { */
+/* width: 50%; /* Or whatever col-lg-6 corresponds to */
+/* flex-basis: 50%; */
+/* } */
+/* } */
+
+
+/* Ensure your existing .home media queries are still relevant */
+/* For example, if you were targeting .home .image for image sizing: */
+@media (max-width: 991px) { /* For tablets, if stacking */
+  /* .home .content { text-align: center; } -- from your old CSS */
+  /* You might adjust .hero-main-image sizes here if needed */
+  .hero-main-image {
+    max-width: 350px; /* Example for tablet */
+  }
+}
+
+@media (max-width: 767px) { /* For smaller mobiles */
+  /* .home .content h2 { font-size: 2.5rem; } -- from your old CSS */
+  .hero-main-image {
+    max-width: 280px; /* Example for mobile */
+    border-width: 3px;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero-main-image {
+    max-width: 220px; /* Example for very small screens */
+  }
+}
