@@ -1,42 +1,41 @@
-
 <%- include("partials/header.ejs") %>
 
-    <div>
-      <section class=" hero " >
-        <div id="hero-section " class="container">
-          <div class="row">
-            <div class="custom-column col-md-6 col-lg-6">
-              <div class="hero_hero">
-                <h5 class="subtitle_section" data-content="HELLO"></h5>
-                <h2 class="name">I'm Yash Patel</h2>
-                <h5 class="belowname">Aspiring Software engineer</h5>
-                <p id="about-me">Hi there! My name is Yash Patel and I’m a aspiring software engineer with willing to get
-                  experience in the industry. I love all things related tech and coding, I share my knowledge and experience with
-                  others..</p>
-                
-              </div>
-              <a href="#contact">
-                <div class="button button-1">Connect</div>
-              </a>
-              
-            </div>
-            <div class="image-column">
-              <img
-                  alt="Yash Patel"
-                  loading="lazy"
-                  decoding="async"
-                  class="hero-main-image" 
-                  style="object-fit: cover; border-radius: 50%; aspect-ratio: 1/1; width: 100%;;" 
-                  src="images/me_2.jpeg"
-                />
-            </div>
-          </div>
-      </section>
-  
+<section class="hero">
+  <div class="bg-blob bg-blob--accent hero-blob-1"></div>
+  <div class="bg-blob bg-blob--blue hero-blob-2"></div>
+  <div class="container">
+    <div class="hero-grid reveal">
+      <div class="hero-content">
+        <div class="hero-badge"><span class="hero-badge-dot"></span>Hello, I'm</div>
+        <h1 class="hero-name">Yash <span>Patel</span></h1>
+        <p class="hero-role">Software Engineer @ Cisco - Cloud Security</p>
+        <p class="hero-about">
+          B.Tech student at NIT Surat building scalable full-stack and cloud-native systems.
+          I build Zero Trust security solutions at Cisco and share technical writing and engineering notes on <a href="https://medium.com/@yashitz07" target="_blank" rel="noreferrer">Medium</a>.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Connect with me <i class="ri-arrow-right-line"></i></a>
+          <a href="#projects" class="btn-outline">View Projects</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/yashitz07" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+          <a href="https://www.linkedin.com/in/yash-patel-882307252/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+          <a href="https://medium.com/@yashitz07" target="_blank" rel="noreferrer" aria-label="Medium blog"><i class="ri-medium-fill"></i></a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-image-ring">
+          <img alt="Yash Patel" loading="eager" decoding="async" class="hero-main-image" src="/images/yash-patel-profile.jpeg" />
+        </div>
+      </div>
     </div>
-  <%- include("projects.ejs") %>
-  <%- include("experience.ejs") %>
-  <%- include("education.ejs") %>
-  <%- include("achievement.ejs") %>
-  <%- include("connect.ejs") %>
-  <%- include("partials/footer.ejs") %>
+  </div>
+</section>
+
+<%- include("projects.ejs") %>
+<%- include("experience.ejs") %>
+<%- include("skills.ejs") %>
+<%- include("education.ejs") %>
+<%- include("achievement.ejs") %>
+<%- include("connect.ejs") %>
+<%- include("partials/footer.ejs") %>
