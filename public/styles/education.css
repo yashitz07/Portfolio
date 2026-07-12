@@ -1,145 +1,87 @@
-/* General Styles for Education Section */
-#education-section {
-  color: #ffffff; /* Default text color */
-  padding: 50px 20px; /* Consistent padding */
-  font-family: 'Arial', sans-serif; /* Or your preferred font */
+#education.projects-section {
+  padding: var(--section-gap) 0;
 }
 
-/* Centered Title Container (Reusable) */
-.section-title-container {
-  text-align: center;
-  margin-bottom: 50px;
+#education.projects-section h2 {
+  display: none;
 }
 
-.section-main-title {
-  color: #01d293; /* Your accent color */
-  font-size: 2.5em;
-  margin-bottom: 10px; /* Space between title and subtitle */
-}
-
-.section-subtitle {
-  font-size: 1.2em;
-  color: #b0c4de; /* Lighter text color for subtitle */
-  margin-top: 0;
-}
-
-/* Education Content Wrapper */
 .education-content-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center the column of entries */
+  gap: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
   width: 100%;
 }
 
 .education-entry {
-  border-left: 5px solid #01d293; /* Accent color border */
-  padding: 20px 25px;
-  width: 80%; /* Maintain width from old #edu-right */
-  max-width: 800px; /* Maintain max-width */
-  margin-bottom: 25px; /* Space between entries */
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(1, 210, 147, 0.3);
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent);
+  padding: 1.5rem 1.75rem;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .education-entry:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(1, 210, 147, 0.3);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
 .education-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-bottom: 1px solid #01d293a0; /* Accent color border, slightly transparent */
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .education-degree {
-  font-size: 1.3em; /* Was 22px */
-  font-weight: bold;
-  color: #ffffff; /* Brighter color for degree */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .education-year {
-  font-size: 1em; /* Was 20px */
-  color: #b0c4de; /* Lighter color for year */
-  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 600;
+  background: var(--accent-subtle);
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-full);
 }
 
 .education-details {
-  padding-left: 5px; /* Slight indent for details */
+  padding-left: 0;
 }
 
 .education-institution,
 .education-marks {
-  font-size: 1em; /* Was 20px */
-  color: #d0e0f0; /* Slightly brighter than default subtitle text */
+  font-size: 0.95rem;
+  color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 5px;
+  margin-bottom: 0.25rem;
 }
 
 .education-institution {
   font-weight: 500;
 }
 
-.education-marks {
-  font-family: sans-serif; /* Kept from original */
-}
-
-/* AOS Animation (ensure it's still working as expected) */
-[data-aos^=zoom][data-aos^=zoom].aos-animate {
-  opacity: 1;
-  transform: translateZ(0) scale(1);
-}
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-  #education-section {
-    padding: 40px 15px;
-  }
-  .section-main-title {
-    font-size: 2em;
-  }
-  .section-subtitle {
-    font-size: 1.1em;
-  }
   .education-entry {
-    width: 95%; /* More width on smaller screens */
-    padding: 15px 20px;
+    padding: 1.25rem 1.5rem;
   }
+
   .education-header {
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-  }
-  .education-degree {
-    font-size: 1.15em;
-    margin-bottom: 5px; /* Space between degree and year when stacked */
-  }
-  .education-year {
-    font-size: 0.95em;
-  }
-  .education-institution,
-  .education-marks {
-    font-size: 0.95em;
+    gap: 0.5rem;
   }
 }
-
-/*
-  Removed old CSS as it's replaced or adapted:
-  .slides::after { }
-  #edu-content { }
-  #edu-right { }
-  .edu-data { } (Replaced by .education-entry)
-  .edu-upper { } (Replaced by .education-header)
-  .degree { } (Replaced by .education-degree)
-  .year { } (Replaced by .education-year)
-  .edu-lower { } (Replaced by .education-details)
-  .desc { } (Replaced by .education-institution)
-  .marks { } (Replaced by .education-marks)
-  .education-title { }
-  .education-subtitle { } (Styles now handled by .section-main-title & .section-subtitle)
-*/

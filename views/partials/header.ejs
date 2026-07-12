@@ -1,88 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="/public/styles/Service_software_development.svg" type="image/svg+xml">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <meta name="description" content="Yash Patel - Software Engineer at Cisco. Portfolio showcasing projects, experience, skills, achievements, and technical writing.">
+  <link rel="shortcut icon" href="/styles/Service_software_development.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-Z2TU7oUq7Fci9s3RsWt9TkQk9ggZlgb6sck0UqfNOrk4a5w+gFq+8meTC5QCk6c" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
-  <link rel="stylesheet" href="/styles/layout.css">
-  <link rel="stylesheet" href="/styles/achievements.css">
-  <link rel="stylesheet" href="/styles/content.css">
-  <link rel="stylesheet" href="/styles/projects.css">
-  <link rel="stylesheet" href="/styles/education.css">
-  <link rel="stylesheet" href="/styles/nav.css">
-  <link rel="stylesheet" href="/styles/index.css">
-  <link rel="stylesheet" href="/styles/experience.css">
-
-  <title>Yash Patel</title>
+  <link rel="stylesheet" href="/styles/theme.css"><link rel="stylesheet" href="/styles/layout.css"><link rel="stylesheet" href="/styles/nav.css"><link rel="stylesheet" href="/styles/index.css"><link rel="stylesheet" href="/styles/content.css"><link rel="stylesheet" href="/styles/projects.css"><link rel="stylesheet" href="/styles/experience.css"><link rel="stylesheet" href="/styles/education.css"><link rel="stylesheet" href="/styles/achievements.css"><link rel="stylesheet" href="/styles/skills.css"><link rel="stylesheet" href="/styles/responsive.css">
+  <title>Yash Patel | Software Engineer</title>
 </head>
-
 <body>
-  <nav class="nav">
-    <div class="container">
-        <div class="logo">
-          <a aria-label="Home Page" href="/">
-            <h1>
-              <span>Y</span>ash
-              <span>P</span>atel
-            </h1>
-          </a>  
-        </div>
-        <div class="main_list" id="mainListDiv">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#achievement">Achievements</a></li>
-                
-
-            </ul>
-
-        </div>
-        <div class="media_button">
-            <button class="main_media_button" id="mediaButton">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</nav>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mainListDiv = document.getElementById("mainListDiv");
-    const mediaButton = document.getElementById("mediaButton");
-
-    if (mediaButton && mainListDiv) { // Check if elements exist
-      mediaButton.addEventListener("click", function () {
-        // Toggle the .show_list class on the main_list div
-        mainListDiv.classList.toggle("show_list");
-        
-        // Toggle the .active class on the button for icon animation
-        mediaButton.classList.toggle("active");
-      });
-    } else {
-      console.error("Mobile menu button or list not found!");
-    }
-
-    // Optional: Close menu when a link is clicked (useful for single-page apps/anchor links)
-    const navLinks = mainListDiv.querySelectorAll("ul li a");
-    navLinks.forEach(link => {
-      link.addEventListener("click", function() {
-        if (mainListDiv.classList.contains("show_list")) {
-          mainListDiv.classList.remove("show_list");
-          mediaButton.classList.remove("active");
-        }
-      });
-    });
-  });
-</script>
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-
-<main class="container">  
+  <nav class="nav" id="navbar"><div class="container"><div class="logo"><a aria-label="Home Page" href="/"><h1><span>Y</span>ash <span>P</span>atel</h1></a></div><div class="main_list" id="mainListDiv"><ul><li><a href="/">Home</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#achievement">Achievements</a></li><li class="nav-cta"><a href="#contact">Connect</a></li></ul></div><div class="media_button"><button class="main_media_button" id="mediaButton" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></div></nav>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<main>
