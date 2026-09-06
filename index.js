@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.locals.web3formsAccessKey = process.env.WEB3FORMS_ACCESS_KEY || '';
 
 // Routes
 app.get("/", (req, res) => {

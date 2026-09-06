@@ -34,6 +34,14 @@ To get the website running on your local machine, follow these steps:
    ```sh
    http://localhost:3000
 
+### Contact form configuration
+
+Create a Web3Forms access key for `yashitz07@gmail.com` and set it before starting the server:
+
+```env
+WEB3FORMS_ACCESS_KEY=your-web3forms-access-key
+```
+
 📦 Dependencies
 This project uses the following npm packages:
 

@@ -20,7 +20,11 @@
         </ul>
       </div>
       <div class="contact_form">
-        <form id="myForm" class="form1" action="" method="post">
+        <form id="myForm" class="form1" action="https://api.web3forms.com/submit" method="post">
+          <input type="hidden" name="access_key" value="<%= web3formsAccessKey %>">
+          <input type="hidden" name="subject" value="New portfolio contact message">
+          <input type="hidden" name="from_name" value="Portfolio contact form">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           <input type="text" name="name" placeholder="Your Full Name" required autocomplete="name">
           <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
           <textarea name="message" placeholder="Your Message" required rows="4" autocomplete="off"></textarea>

@@ -1,7 +1,3 @@
-const SERVICE_ID = 'service_3c25gwc';
-const TEMPLATE_ID = 'template_atlktth';
-const PUBLIC_KEY = 'GPLnuKl1gYmhc4bU1';
-
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initNavScroll();
@@ -82,21 +78,31 @@ function initScrollReveal() {
 
 function initContactForm() {
   const form = document.getElementById('myForm');
-  if (!form || typeof emailjs === 'undefined') return;
+  if (!form) return;
 
-  emailjs.init(PUBLIC_KEY);
-
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
-      .then(() => {
-        alert('Message sent successfully!');
-        form.reset();
-      })
-      .catch(error => {
-        console.error('EmailJS Error:', error);
-        alert('Failed to send message. Please try again.');
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
       });
+      const result = await response.json();
+
+      if (!response.ok) throw new Error(result.error || 'Unable to send the message.');
+
+      alert(result.message);
+      form.reset();
+    } catch (error) {
+      console.error('Contact form error:', error);
+      alert(error.message || 'Failed to send message. Please try again.');
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 }
